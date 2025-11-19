@@ -71,3 +71,10 @@ Biden's keywords contain noticeably more numbers than Trump's keywords: 108, 11,
 - `'NNP'` refers to proper nouns.
 - `'VBD'` refers to past-tense verbs.
 - `'PRIV'` refers to private verbs.
+
+### Problem 2g
+
+Key feature analysis shows that Trump's 2025 inaugural address makes prolific use of universal quantifiers: nobody, everybody, everything, QUPR (quantifying pronouns), everyone, anything. Trump's speech is also characterized by its use of interjections (UH), amplifiers (AMP), and second-person pronouns (you, SPP2). These key features suggest that Trump's speech has an overall "confrontational" style.
+
+In contrast, Biden's speech is must less confrontational and much more conciliatory. Biden's key features include hedge words (HDG) and contractions (CONT), as well as question marks (QUES) and the pronouns "us" and "we." These features make Biden's speech more "conversational" in style, engaging the audience in dialogue as an equal and casual participant.
+
