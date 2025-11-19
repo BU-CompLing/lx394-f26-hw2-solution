@@ -63,3 +63,9 @@ In fact, [it turns out](https://www.cogsci.ed.ac.uk/~richard/utf-8.cgi?input=e2+
 Both speeches contain keywords that reflect the political priorities of each new president. For Trump, these include drill, Hispanic, hurricane, illegally, and Deal; for Biden, these include virus, uniting, pandemic, protesters, marching, and demonization.
 
 Biden's keywords include names of other politicians, such as Pence, McConnell, Pelosi, Schumer, and Kamala. The only 
+
+### Problem 2e
+- `'CAP'` refers to words starting with a capital letter.
+- `'NNP'` refers to proper nouns.
+- `'VBD'` refers to past-tense verbs.
+- `'PRIV'` refers to private verbs.
