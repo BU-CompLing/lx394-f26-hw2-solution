@@ -62,7 +62,9 @@ In fact, [it turns out](https://www.cogsci.ed.ac.uk/~richard/utf-8.cgi?input=e2+
 
 Both speeches contain keywords that reflect the political priorities of each new president. For Trump, these include drill, Hispanic, hurricane, illegally, and Deal; for Biden, these include virus, uniting, pandemic, protesters, marching, and demonization.
 
-Biden's keywords include names of other politicians, such as Pence, McConnell, Pelosi, Schumer, and Kamala. The only 
+Biden's keywords include names of other politicians, such as Pence, McConnell, Pelosi, Schumer, and Kamala. The only politicians appearing among Trump's keywords are himself and vice president (Trump and Vance), as well as former president William McKinley. On the other hand, Biden's keywords include mentions of Saint Augustine, referring to his Catholic heritage.
+
+Biden's keywords contain noticeably more numbers than Trump's keywords: 108, 11, hundreds, Millions. There are also keywords related to finance and the economy, such as mortgage, accounting, inequity, and joblessness. The only number among Trump's keywords is billions.
 
 ### Problem 2e
 - `'CAP'` refers to words starting with a capital letter.
