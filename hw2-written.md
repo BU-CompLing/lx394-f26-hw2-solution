@@ -57,3 +57,9 @@ In the Latin-1 encoding, `'â'` [is represented as](https://cs.stanford.edu/peop
 Based on the concordance for `'\x80\x99'` in Donald Trump's 2025 inauguration speech, it seems that each occurrence of an apostrophe has been replaced by `'â\x80\x99'`. A likely explanation for this is that the apostrophe is represented by a 3-byte character in UTF-8. The first byte is 11100010 (which is `'â'` in Latin-1), but the other two bytes do not have any meaning in Latin-1, so Python simply prints them as a description of the two bytes.
 
 In fact, [it turns out](https://www.cogsci.ed.ac.uk/~richard/utf-8.cgi?input=e2+80+99&mode=bytes) that E2 80 99 is the hexadecimal UTF-8 representation of the character `'’'` (`RIGHT SINGLE QUOTATION MARK`).
+
+### Problem 2d
+
+Both speeches contain keywords that reflect the political priorities of each new president. For Trump, these include drill, Hispanic, hurricane, illegally, and Deal; for Biden, these include virus, uniting, pandemic, protesters, marching, and demonization.
+
+Biden's keywords include names of other politicians, such as Pence, McConnell, Pelosi, Schumer, and Kamala. The only 
