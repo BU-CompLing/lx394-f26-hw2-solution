@@ -27,3 +27,19 @@ except ZeroDivisionError:
     print("I tried to divide by zero!")
 ```
 the code actually crashes with a `NotImplementedError` because the `except` block is only triggered by a `ZeroDivisionError`.
+
+### Problem 1e
+
+The code `a.join(b)` creates a string with all the items in `b` concatenated together, separated by `a`. 
+
+`a.join(b)` still works if `b` is a `set[str]`, but no guarantees can be made about which order the items of `b` will appear in the concatenated string.
+
+`a.join(b)` _does not_ work if `b == range(10)`. It only works if `b` is a collection of strings.
+
+### Problem 1f
+
+`break` terminates the most recently started `for` loop. 
+
+### Problem 1g
+
+The function `word_tokenize` splits up a string into tokens, represented as a `list[str]`.
