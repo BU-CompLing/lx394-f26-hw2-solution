@@ -43,3 +43,17 @@ The code `a.join(b)` creates a string with all the items in `b` concatenated tog
 ### Problem 1g
 
 The function `word_tokenize` splits up a string into tokens, represented as a `list[str]`.
+
+### Problem 2a
+
+```python
+'\x80\x99', 'McKinley', 'Thatâ', 'Iâ', 'Itâ'
+```
+
+### Problem 2b
+
+In the Latin-1 encoding, `'â'` [is represented as](https://cs.stanford.edu/people/miles/iso8859.html) E2 in hexadecimal or 11100010 in binary. In UTF-8, this would be the first byte in a 3-byte character.
+
+Based on the concordance for `'\x80\x99'` in Donald Trump's 2025 inauguration speech, it seems that each occurrence of an apostrophe has been replaced by `'â\x80\x99'`. A likely explanation for this is that the apostrophe is represented by a 3-byte character in UTF-8. The first byte is 11100010 (which is `'â'` in Latin-1), but the other two bytes do not have any meaning in Latin-1, so Python simply prints them as a description of the two bytes.
+
+In fact, [it turns out](https://www.cogsci.ed.ac.uk/~richard/utf-8.cgi?input=e2+80+99&mode=bytes) that E2 80 99 is the hexadecimal UTF-8 representation of the character `'’'` (`RIGHT SINGLE QUOTATION MARK`).
