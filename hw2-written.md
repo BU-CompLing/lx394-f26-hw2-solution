@@ -38,7 +38,7 @@ The code `a.join(b)` creates a string with all the items in `b` concatenated tog
 
 ### Problem 1f
 
-`break` terminates the most recently started `for` loop. 
+`break` terminates the most recently started active `for` loop. 
 
 ### Problem 1g
 
