@@ -132,3 +132,11 @@ rnc_feat_fd = hw2.feature_dist(nomination_acceptance.raw(rnc_files))
 print(hw1.freq_ratio(dnc_feat_fd, nomination_feat_fd).most_common(5))
 print(hw1.freq_ratio(rnc_feat_fd, nomination_feat_fd).most_common(5))
 ```
+
+### Problem 3g
+
+#### Inaugural Addresses vs. Nomination Acceptance Speeches
+
+Many of the top keywords for the nomination acceptance speeches are subword tokens like 's, n't, 're, '', ``, 've, 'm, 'll, ca, and wo. These keywords seem to reflect differences in tokenization between the nomination acceptance speeches and the inaugural addresses.
+
+More substantively, the nomination acceptance speeches are characterized by the use of names like Mr., Joe, and Kennedy, as well as contractions (CONT), exclamations (EXCL), interjections (UH), hedge words (HDG), and second-person pronouns (SPP2, yourself, you, your). These are mostly absent from the keywords and key features of the inaugural addresses. Instead, the inaugural addresses are characterized by mentions of government departments and principles of political philosophy (Executive, commerce, sections, subjects, suffrage, commercial, predecessor) as well as syntactic constructions like pied-piping relatives (PIRE, e.g. "to whom," "for which"), past participles with whiz-deletion (WZPAST, e.g. "Mark Twain, generally considered the greatest American humorist..."), and sentential relative clauses (SERE, e.g. "The executive branch, which the president leads..."). This suggests that nomination acceptance speeches generally have a more "casual" tone, whereas inaugural addresses generally have a more "formal" or "serious" tone. 
