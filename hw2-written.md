@@ -78,3 +78,57 @@ Key feature analysis shows that Trump's 2025 inaugural address makes prolific us
 
 In contrast, Biden's speech is must less confrontational and much more conciliatory. Biden's key features include hedge words (HDG) and contractions (CONT), as well as question marks (QUES) and the pronouns "us" and "we." These features make Biden's speech more "conversational" in style, engaging the audience in dialogue as an equal and casual participant.
 
+### Problem 3e
+
+- The top five keywords of the nomination acceptance speeches are: `"'s", "n't", "'re", "''", '``'`
+- The top five keywords of the inaugural addresses are: `'"', 's', '."', 'cannot', 'object'`
+- The top five key features of the nomination acceptance speeches are: `'CONT', 'everybody', 'yourself', 'somebody', 'EXCL'`
+- The top five key features of the inaugural addresses are: `'its', 'which', 'PIRE', 'such', 'SMP'`
+
+You can find these keywords and key features using the following code:
+```python
+# Keywords
+nomination_fd = FreqDist(nomination_acceptance.words())
+inaugural_fd = FreqDist(inaugural.words())
+ref_fd = nomination_fd + inaugural_fd
+
+print(hw1.freq_ratio(nomination_fd, ref_fd).most_common(5))
+print(hw1.freq_ratio(inaugural_fd, ref_fd).most_common(5))
+
+# Key features
+nomination_feat_fd = hw2.feature_dist(nomination_acceptance.raw())
+inaugural_feat_fd = hw2.feature_dist(inaugural.raw())
+ref_feat_fd = nomination_feat_fd + inaugural_feat_fd
+
+print(hw1.freq_ratio(nomination_feat_fd, ref_feat_fd).most_common(5))
+print(hw1.freq_ratio(inaugural_feat_fd, ref_feat_fd).most_common(5))
+```
+
+### Problem 3f
+
+- The top five keywords of the DNC speeches are: `'doors', 'Booo', 'Kamala', 'corporations', 'Covenant'`
+- The top five keywords of the RNC speeches are: `'Nobody', 'Boo-o-o', 'judges', 'broad', 'recently'`
+- The top five key features of the DNC speeches are: `'X', 'everyone', 'whatever', 'mine', 'yourself'`
+- The top five key features of the RNC speeches are: `'everybody', 'nobody', 'AMP', 'yet', 'theirs'`
+
+You can find these keywords and key features using the following code:
+
+```python
+# Identify DNC and RNC speeches
+dnc_files = [f for f in nomination_acceptance.fileids() if f.endswith("DNC.html")]
+rnc_files = [f for f in nomination_acceptance.fileids() if f.endswith("RNC.html")]
+
+# Keywords
+dnc_fd = FreqDist(nomination_acceptance.words(dnc_files))
+rnc_fd = FreqDist(nomination_acceptance.words(rnc_files))
+
+print(hw1.freq_ratio(dnc_fd, nomination_fd).most_common(5))
+print(hw1.freq_ratio(rnc_fd, nomination_fd).most_common(5))
+
+# Key features
+dnc_feat_fd = hw2.feature_dist(nomination_acceptance.raw(dnc_files))
+rnc_feat_fd = hw2.feature_dist(nomination_acceptance.raw(rnc_files))
+
+print(hw1.freq_ratio(dnc_feat_fd, nomination_feat_fd).most_common(5))
+print(hw1.freq_ratio(rnc_feat_fd, nomination_feat_fd).most_common(5))
+```
