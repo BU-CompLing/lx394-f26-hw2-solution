@@ -5,50 +5,11 @@ import sys
 from pathlib import Path
 from typing import Optional, Union
 
-import biberplus.tagger.function_words_tagger
-import biberplus.tagger.tag_frequencies
-import biberplus.tagger.tagger
-import biberplus.tagger.tagger_utils
 import nltk
-from biberplus.tagger import tag_text
 from bs4 import BeautifulSoup
 from nltk.corpus import CorpusReader
 from nltk.probability import FreqDist
 
-""" Fix the biberplus bug for Windows users """
-
-warning_shown = False
-
-
-def build_variable_dictionaries() -> dict[str, set[str]]:
-    global warning_shown
-    if not warning_shown:
-        print("You are running Sophie's modified version of biberplus, which "
-              "which fixes compatibility issues with Windows.",
-              file=sys.stderr)
-        warning_shown = True
-
-    script_dir = Path(os.path.dirname(biberplus.tagger.tagger_utils.__file__))
-    constant_files = script_dir.glob("constants/*.txt")
-    variables_dict = {}
-
-    for constant_file in constant_files:
-        # E.g. constants/suasive_verbs.txt -> suasive_verbs
-        file_name = constant_file.stem
-        variables_dict[file_name] = \
-            biberplus.tagger.tagger_utils.read_in_variables(constant_file)
-
-    return variables_dict
-
-
-biberplus.tagger.tagger_utils.build_variable_dictionaries = \
-    build_variable_dictionaries
-biberplus.tagger.tagger.build_variable_dictionaries = \
-    build_variable_dictionaries
-biberplus.tagger.tag_frequencies.build_variable_dictionaries = \
-    build_variable_dictionaries
-biberplus.tagger.function_words_tagger.build_variable_dictionaries = \
-    build_variable_dictionaries
 
 """ Problem 1: Python Exercises """
 
@@ -83,24 +44,6 @@ def get_encodings(corpus: CorpusReader) -> dict[str, str]:
                 break
     corpus._encoding = old_encoding
     return encodings
-
-
-def feature_dist(text: str) -> FreqDist:
-    """
-    Problem 2f: Counts the number of occurrences of each grammatical
-    feature tag assigned by biberplus's tag_text function to a corpus.
-    See hw2-pset.ipynb for a usage example. See Appendix A of Alkiek et
-    al. (2025) for the full list of tags:
-    https://arxiv.org/abs/2502.18590v1
-
-    :param text: A corpus, represented as untokenized plaintext
-    :return: A FreqDist mapping each possible tag appearing in text to
-        the number of times that tag occurs in tag_text(text)
-    """
-    tags = []
-    for token in tag_text(text):
-        tags += token["tags"]
-    return FreqDist(tags)
 
 
 """ Problem 3: Analysis of Nomination Acceptance Speeches """
