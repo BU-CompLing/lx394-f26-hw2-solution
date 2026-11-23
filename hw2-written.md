@@ -113,4 +113,4 @@ More substantively, the nomination acceptance speeches are characterized by the 
 
 The DNC keywords reveal a focus on class politics (corporations, middle-class, 80th, wealthiest, enriched, minimum, rewarded) as well as the rights of underprivileged people (belong, disabilities, Rights). The RNC keywords reveal little about the Republican Party's policy preferences, apart from isolated mentions of political issues (Ford, aliens, NAFTA). 
 
-For both parties, the second keyword is some variation of "boo," reflecting the energy and [collective effervescence](https://en.wikipedia.org/wiki/Collective_effervescence) of nominating conventions. The key features suggest that RNC speeches are somewhat more energetic than DNC speeches, due to the former's use of amplifiers (AMP), split infinitives (SPIN), and questions (QUES).
+For both parties, the second keyword is some variation of "boo," reflecting the energy and [collective effervescence](https://en.wikipedia.org/wiki/Collective_effervescence) of nominating conventions.
