@@ -10,9 +10,9 @@
 
 UTF-8's "morphosyntax" helps the computer parse UTF-8 bytes into characters by making it easy to identify character boundaries. For example, it is easy to tell that the UTF-8 binary code
 ```
-01011001 11000011 10111010 01101100 11000011 10111001
+11101000 10101111 10101101 11101000 10101000 10000000 11100101 10101101 10100110
 ```
-contains four characters, because there are 6 bytes in total and 2 of them begin with 10-. The prefixes also tell the computer how many 10- bytes to expect after each character boundary. If the wrong number of 10- bytes is encountered, then we know that the UTF-8 code is corrupt.
+contains three characters, because there are 9 bytes in total and 6 of them begin with 10-. The prefixes also tell the computer how many 10- bytes to expect after each character boundary. If the wrong number of 10- bytes is encountered, then we know that the UTF-8 code is corrupt.
 
 ### Problem 1d
 
@@ -65,18 +65,6 @@ Both speeches contain keywords that reflect the political priorities of each new
 Biden's keywords include names of other politicians, such as Pence, McConnell, Pelosi, Schumer, and Kamala. The only politicians appearing among Trump's keywords are himself and his vice president (Trump and Vance), as well as former president William McKinley. On the other hand, Biden's keywords include mentions of Saint Augustine, referring to his Catholic heritage.
 
 Biden's keywords contain noticeably more numbers than Trump's keywords: 108, 11, hundreds, Millions. There are also keywords related to finance and the economy, such as mortgage, accounting, inequity, and joblessness. The only number among Trump's keywords is billions.
-
-### Problem 2e
-- `'CAP'` refers to words starting with a capital letter.
-- `'NNP'` refers to proper nouns.
-- `'VBD'` refers to past-tense verbs.
-- `'PRIV'` refers to private verbs.
-
-### Problem 2g
-
-Key feature analysis shows that Trump's 2025 inaugural address makes prolific use of universal quantifiers: nobody, everybody, everything, QUPR (quantifying pronouns), everyone, anything. Trump's speech is also characterized by its use of interjections (UH), amplifiers (AMP), and second-person pronouns (you, SPP2). These key features suggest that Trump's speech has an overall "confrontational" style.
-
-In contrast, Biden's speech is must less confrontational and much more conciliatory. Biden's key features include hedge words (HDG) and contractions (CONT), as well as question marks (QUES) and the pronouns "us" and "we." These features make Biden's speech more "conversational" in style, engaging the audience in dialogue as an equal and casual participant.
 
 ### Problem 3e
 
