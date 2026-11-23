@@ -70,55 +70,35 @@ Biden's keywords contain noticeably more numbers than Trump's keywords: 108, 11,
 
 - The top five keywords of the nomination acceptance speeches are: `"'s", "n't", "'re", "''", '``'`
 - The top five keywords of the inaugural addresses are: `'"', 's', '."', 'cannot', 'object'`
-- The top five key features of the nomination acceptance speeches are: `'CONT', 'everybody', 'yourself', 'somebody', 'EXCL'`
-- The top five key features of the inaugural addresses are: `'its', 'which', 'PIRE', 'such', 'SMP'`
 
-You can find these keywords and key features using the following code:
+You can find these keywords using the following code:
 ```python
-# Keywords
 nomination_fd = FreqDist(nomination_acceptance.words())
 inaugural_fd = FreqDist(inaugural.words())
 ref_fd = nomination_fd + inaugural_fd
 
 print(hw1.freq_ratio(nomination_fd, ref_fd).most_common(5))
 print(hw1.freq_ratio(inaugural_fd, ref_fd).most_common(5))
-
-# Key features
-nomination_feat_fd = hw2.feature_dist(nomination_acceptance.raw())
-inaugural_feat_fd = hw2.feature_dist(inaugural.raw())
-ref_feat_fd = nomination_feat_fd + inaugural_feat_fd
-
-print(hw1.freq_ratio(nomination_feat_fd, ref_feat_fd).most_common(5))
-print(hw1.freq_ratio(inaugural_feat_fd, ref_feat_fd).most_common(5))
 ```
 
 ### Problem 3f
 
 - The top five keywords of the DNC speeches are: `'doors', 'Booo', 'Kamala', 'corporations', 'Covenant'`
 - The top five keywords of the RNC speeches are: `'Nobody', 'Boo-o-o', 'judges', 'broad', 'recently'`
-- The top five key features of the DNC speeches are: `'X', 'everyone', 'whatever', 'mine', 'yourself'`
-- The top five key features of the RNC speeches are: `'everybody', 'nobody', 'AMP', 'yet', 'theirs'`
 
-You can find these keywords and key features using the following code:
+You can find these keywords using the following code:
 
 ```python
 # Identify DNC and RNC speeches
 dnc_files = [f for f in nomination_acceptance.fileids() if f.endswith("DNC.html")]
 rnc_files = [f for f in nomination_acceptance.fileids() if f.endswith("RNC.html")]
 
-# Keywords
+# Get Keywords
 dnc_fd = FreqDist(nomination_acceptance.words(dnc_files))
 rnc_fd = FreqDist(nomination_acceptance.words(rnc_files))
 
 print(hw1.freq_ratio(dnc_fd, nomination_fd).most_common(5))
 print(hw1.freq_ratio(rnc_fd, nomination_fd).most_common(5))
-
-# Key features
-dnc_feat_fd = hw2.feature_dist(nomination_acceptance.raw(dnc_files))
-rnc_feat_fd = hw2.feature_dist(nomination_acceptance.raw(rnc_files))
-
-print(hw1.freq_ratio(dnc_feat_fd, nomination_feat_fd).most_common(5))
-print(hw1.freq_ratio(rnc_feat_fd, nomination_feat_fd).most_common(5))
 ```
 
 ### Problem 3g
@@ -127,7 +107,7 @@ print(hw1.freq_ratio(rnc_feat_fd, nomination_feat_fd).most_common(5))
 
 Many of the top keywords for the nomination acceptance speeches are subword tokens like 's, n't, 're, '', ``, 've, 'm, 'll, ca, and wo. These keywords seem to reflect differences in tokenization between the nomination acceptance speeches and the inaugural addresses.
 
-More substantively, the nomination acceptance speeches are characterized by the use of names like Mr., Joe, and Kennedy, as well as contractions (CONT), exclamations (EXCL), interjections (UH), hedge words (HDG), and second-person pronouns (SPP2, yourself, you, your). These are mostly absent from the keywords and key features of the inaugural addresses. Instead, the inaugural addresses are characterized by mentions of government departments and principles of political philosophy (Executive, commerce, sections, subjects, suffrage, commercial, predecessor) as well as syntactic constructions like pied-piping relatives (PIRE, e.g. "to whom," "for which"), past participles with whiz-deletion (WZPAST, e.g. "Mark Twain, generally considered the greatest American humorist..."), and sentential relative clauses (SERE, e.g. "The executive branch, which the president leads..."). This suggests that nomination acceptance speeches generally have a more "casual" tone, whereas inaugural addresses generally have a more "formal" or "serious" tone. 
+More substantively, the nomination acceptance speeches are characterized by the use of names like Mr., Joe, and Kennedy, as well as second-person pronouns (yourself, you, your). These are mostly absent from the keywords of the inaugural addresses. Instead, the inaugural addresses are characterized by mentions of government departments and principles of political philosophy (Executive, commerce, sections, subjects, suffrage, commercial, predecessor). This suggests that nomination acceptance speeches generally have a more "casual" tone, whereas inaugural addresses generally have a more "formal" or "serious" tone. 
 
 #### DNC vs. RNC Speeches
 
